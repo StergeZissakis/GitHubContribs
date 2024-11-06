@@ -1,4 +1,6 @@
-api_key = ""
+import os
+
+api_key = os.environ['API_KEY']
 
 headers = {
     'Authorization': f'token {api_key}',
