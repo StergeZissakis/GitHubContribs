@@ -103,7 +103,9 @@ Clone this repo.
 <br>
 Create the docker image: `docker build -t fastapi-app . `
 <br>
-Run the docker instance: `docker run -d --name fastapi-app -p 8000:8000 fastapi-app`
+Create an enviroment variable called `API_KEY` and give your GitHub API token as its value; export API_KEY="the_tocken_string"
+<br>
+Run the docker instance: `docker run -d --name fastapi-app -p 8000:8000 -e API_KEY fastapi-app`
 <br>
 Point your browser to the following url: [http://localhost:8000/app/index.html](http://localhost:8000/app/index.html)
 <br>
