@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 from starlette.staticfiles import StaticFiles
+
+import Utils
 from GetCommitsOfRepo import GetCommitsOfRepo
 from GetIssuesOfUser import GetIssuesOfUser
 from GetPullRequestsOfRepo import GetPullRequestsOfRepo
 from GetReposOfUser import GetReposOfUser
-import uvicorn
-import Utils
 
 app = FastAPI()
 app.mount("/app", StaticFiles(directory="www"), name="www")

@@ -1,8 +1,11 @@
 from time import sleep
+
 import requests
+from fastapi import HTTPException
+
 import Utils
 import config
-from fastapi import HTTPException
+
 
 class GetIssuesOfUser:
     url = ""
@@ -41,7 +44,11 @@ class GetIssuesOfUser:
 
         status = "OK"
         if requestRetries == 0:
-            status = "Rate Limit Reached"
+            status = "Rate Limit Retries Timeout"
+        elif len(result) == 0:
+            status = "No issues found"
         elif incompleteResults:
             status = "Incomplete results"
+        else:
+            status = "OK"
         return { 'status': status, 'results': result }

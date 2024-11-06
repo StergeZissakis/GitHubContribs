@@ -1,7 +1,9 @@
 import responses
 from fastapi.testclient import TestClient
-from main import app
+
 import testConfig as config
+from main import app
+
 client = TestClient(app)
 
 @responses.activate
